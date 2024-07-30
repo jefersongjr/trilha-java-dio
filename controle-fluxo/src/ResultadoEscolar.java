@@ -5,7 +5,11 @@ public class ResultadoEscolar {
         if (nota >= 7)
             System.out.println("Aprovado");
 
-        else
+        else if (nota > 5 && nota < 7) { //Condicional encadeada
+
+            System.out.println("Recuperaçao");
+
+        } else
             System.out.println("Reprovado");
     }
 }
