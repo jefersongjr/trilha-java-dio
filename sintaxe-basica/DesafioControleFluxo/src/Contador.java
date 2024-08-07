@@ -10,27 +10,23 @@ public class Contador {
 
         terminal.close();
 
-        contar(parametroUm, parametroDois);
+        try {
+            contar(parametroUm, parametroDois);
+        } catch (ParametrosInvalidosException error) {
+            System.out.println("O primeiro numero deve ser maior que o segundo!");
+        }
 
         }
 
-        static void contar (int parametroUm, int parametroDois) {
+        static void contar(int parametroUm, int parametroDois)  throws ParametrosInvalidosException{
             if (parametroUm > parametroDois) {
                 int numeroInteracoes = parametroUm - parametroDois;
-                int numeroAtual = 1;
-                while (numeroAtual <= numeroInteracoes) {
-                    System.out.println(numeroAtual);
-                    numeroAtual++;
+                for (int i = 1;  i <= numeroInteracoes ; i++) {
+                    System.out.println("Imprimindo o numero: " + i);
                 }
+            } else {
+                throw new ParametrosInvalidosException();
             }
         }
-//        try {
-//            //chamando o método contendo a lógica de contagem
-//            contar(parametroUm, parametroDois);
-//
-//        }catch (Exception exception) {
-//            //imprimir a mensagem: O segundo parâmetro deve ser maior que o primeiro
-//        }
-//
-//    }
+
 }
